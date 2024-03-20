@@ -1,0 +1,12 @@
+<script>
+    if(typeof(Spurit) === 'undefined'){
+        var Spurit = {};
+    }
+    if(!Spurit.tieredPricing){
+        Spurit.tieredPricing = {};
+    }
+    if(!Spurit.tieredPricing.snippet){
+        Spurit.tieredPricing.snippet = {};
+    }
+    Spurit.tieredPricing.snippet.product = {{ product | json }};
+</script>

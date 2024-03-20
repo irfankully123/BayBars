@@ -1,0 +1,14 @@
+{% assign cartParts = cart | json | split: ',' | first | split: '"' %}
+{% assign tokenIndex = cartParts.size | minus: 1%}
+<script>
+    if(typeof(Spurit) === 'undefined'){
+        var Spurit = {};
+    }
+    if(!Spurit.tieredPricing){
+        Spurit.tieredPricing = {};
+    }
+    if(!Spurit.tieredPricing.snippet){
+        Spurit.tieredPricing.snippet = {};
+    }
+    Spurit.tieredPricing.snippet.cart = {{ cart | json }};
+</script>

@@ -1,0 +1,34 @@
+{% comment %}
+  FILE GENERATED AUTOMATICALLY BY AWESOME QUANTITY BREAK (https://apps.shopify.com/awesome-quantity)
+  DO NOT OVERRIDE IT
+{% endcomment %}
+
+<script type="text/javascript">
+  window.AwesomeQuantityBreak = { ...window.AwesomeQuantityBreak };
+
+  {% if customer %}
+  window.AwesomeQuantityBreak.customerTags = "{{customer.tags | join: ','}}";
+  window.AwesomeQuantityBreak.customerId = "{{customer.id}}";
+  {% endif %}
+
+  {% if template contains 'product' %}
+  {% unless product.id == blank %}
+  window.AwesomeQuantityBreak.product = {{product | json}};
+  window.AwesomeQuantityBreak.productCollectionIds = [];
+  {% for c in product.collections %}
+  window.AwesomeQuantityBreak.productCollectionIds.push({{c.id}});
+  {% endfor %}
+  {% endunless %}
+  {% endif %}
+
+  {% if cart %}
+  window.AwesomeQuantityBreak.cart = {{cart | json}};
+  {% endif %}
+  {% if shop %}
+  window.AwesomeQuantityBreak.moneyFormat = {{shop.money_format | json}};
+  window.AwesomeQuantityBreak.currency = {{shop.currency | json}};
+  window.AwesomeQuantityBreak.defaultCurrency = {{settings.default_currency | json}};
+  {% endif %}
+</script>
+
+<script src="https://api-awesome-quantity.herokuapp.com/awesome-quantity-production.js"></script>

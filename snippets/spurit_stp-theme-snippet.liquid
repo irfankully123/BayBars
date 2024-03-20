@@ -1,0 +1,27 @@
+<script>
+    if(typeof(Spurit) === 'undefined'){
+      Spurit = {};
+    }
+    if(!Spurit.tieredPricing){
+        Spurit.tieredPricing = {};
+    }
+    if(!Spurit.tieredPricing.snippet){
+        Spurit.tieredPricing.snippet = {};
+    }
+    Spurit.tieredPricing.snippet.appId = '44';
+    Spurit.tieredPricing.snippet.shopHash = '57bee953895b9a0791279e2fd7f50ef8';
+    Spurit.tieredPricing.snippet.shopDomain = 'itslitmerchstore.myshopify.com';
+    Spurit.tieredPricing.snippet.folderStore = 'https://cdn-spurit.com/pricing-by-quantity/store';
+    Spurit.tieredPricing.snippet.folderCss = 'https://cdn-spurit.com/pricing-by-quantity/css';
+    Spurit.tieredPricing.snippet.moneyFormat = '{{ shop.money_format }}';
+
+    if(typeof(Spurit.globalSnippet) === 'undefined'){
+      Spurit.globalSnippet = {
+        shop_currency: '{{ shop.currency }}',
+        money_format: '{{ shop.money_format }}',
+        cart: {{ cart | json }},
+        customer_id: '{{ customer.id }}'
+      };
+    }
+</script>
+<script src="https://cdn-spurit.com/pricing-by-quantity/js/common.js"></script>
